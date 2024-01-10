@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.slogan{
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+text-align: center;
+font-weight:500;
+color: #363435 ;
+}
+.container, .container2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container2{
+
+width: 300px;
+height: 340px;
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+border-radius: 20px;
+padding: 20px;
+background-color: #B6BBC4;
+
+}
+.container:nth-child(2) {
+    position: relative;
+    right: 35px;
+   }
+.container {
+    
+    width: 500px;
+    height: 340px;
+    padding: 20px;
+    background-color: #161A30;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    border-radius: 20px;
+}
+
+.form_container{
+    display: flex;
+    flex-direction: column; /* mengatur elemen untuk diurutkan secara vertikal */
+    align-items: center; /* mengatur elemen untuk berada di tengah */
+    justify-content: space-around; /* mengatur jarak antar elemen secara merata */
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-family: retroica;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+    font-family: nexa heavy;
+    
+}
+
+input{
+    font-family: sans-serif;
+    background-color: white;
+    color: black;
+    outline: none;
+}
+
+
+#username, #password {
+    width: 150px;
+    height: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    
+}
+
+input[type="submit"] {
+
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}
+
