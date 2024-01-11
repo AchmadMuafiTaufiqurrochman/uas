@@ -13,12 +13,12 @@
     </div>
     <div class="container">
         <h1>Ini Login</h1>
-        <form action="oten_lgn.php" method="post" class="form_container" id="loginForm">
+        <form  class="form_container" id="loginForm">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" placeholder="username" required>
 
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" placeholder="password" required>
 
             <input type="submit" name="submit" value="Login">
         </form>

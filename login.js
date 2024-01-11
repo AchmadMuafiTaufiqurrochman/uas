@@ -1,24 +1,29 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault(); //menghentikan submit form sehingga bisa melakukan proses ajax
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
+  event.preventDefault(); // menghentikan pengeksekusian default form
+  let username = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'oten_lgn.php', true);
+  // Memvalidasi input
+  if (username === '' || password === '') {
+      alert('Username atau password tidak boleh kosong');
+      return;
+  }
+
+  // Mengirimkan data ke server
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', 'auth.php', true);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
   xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
-          var json = JSON.parse(xhr.responseText);
-          console.log(json); // untuk melihat response dari server
-
+          let json = JSON.parse(xhr.responseText);
           if (json.success) {
-              window.location.href = 'inputdata/input.php'; // redirect ke halaman beranda jika login berhasil
+              // Login berhasil, melakukan arahkan ke halaman berikutnya
+              window.location.href = 'dashboard.html';
           } else {
-              alert('Login Gagal! Username atau password salah.');
+              // Login gagal, menampilkan pesan error
+              alert('Username atau password salah');
           }
       }
-  };
-
+  }
   xhr.send('username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password));
 });
