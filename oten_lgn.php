@@ -1,27 +1,23 @@
 <?php
-session_start();
+header('Content-Type: application/json');
 
 // Load file koneksi.php
-require_once 'koneksi.php';
+include 'koneksi.php';
 
-// Menerima data username dan password dari form
-$username = $_POST['username'];
-$password = $_POST['password'];
+// Otentikasi login
+$json = file_get_contents('php://input');
+$data = json_decode($json, true);
 
-// Menjalankan query untuk mengecek username dan password di database
-$query = "SELECT * FROM pengguna WHERE username = ? AND password = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param('ss', $username, $password);
+$sql = "SELECT * FROM pengguna WHERE username = ? AND password = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", $data['username'], $data['password']);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    // Jika username dan password ditemukan, login berhasil
-    $_SESSION['username'] = $username;
-    echo json_encode(['success' => true]);
+    echo json_encode(array("success" => true, "message" => "Login berhasil"));
 } else {
-    // Jika username atau password tidak ditemukan, login gagal
-    echo json_encode(['success' => false]);
+    echo json_encode(array("success" => false, "message" => "Username atau password salah"));
 }
 
 $stmt->close();
