@@ -5,14 +5,14 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   const password = document.getElementById('password').value;
 
   const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'oten_lgn.php', true);
+  xhr.open('POST', 'login.php', true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
           const json = JSON.parse(xhr.responseText);
           if (json.success) {
               alert('Login berhasil');
-              // Arahkan ke halaman berikutnya atau lakukan proses login yang diinginkan
+              window.location.href = 'input_data/input.php' ;
           } else {
               alert(json.message);
           }
