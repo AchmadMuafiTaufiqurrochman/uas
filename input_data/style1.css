@@ -266,3 +266,14 @@
     left: 0;
   }
 }
+.content-main{
+  display:grid;
+  width: 960px;
+  height: 450px;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  border-radius: 20px;
+}
