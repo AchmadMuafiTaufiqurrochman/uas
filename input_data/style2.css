@@ -285,7 +285,8 @@
     flex-direction: column; /* mengatur elemen untuk diurutkan secara vertikal */
     align-items: center; /* mengatur elemen untuk berada di tengah */
     justify-content: space-around;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
+    
 }
 
 input[type="submit"] {
@@ -298,11 +299,11 @@ input[type="submit"] {
   color: white;
 }
 
-#nama_perusahaan, #alamat, #npwp {
+/* .form-content {
   width: 150px;
   height: 20px;
   padding: 10px;
   margin:0 auto;
   border: 1px solid #ddd;
   border-radius: 5px;
-}
+} */
