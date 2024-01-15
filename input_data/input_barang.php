@@ -86,7 +86,7 @@
                 <input type="text" id="harga_barang" name="harga_barang" placeholder="">
             <label for="">Quantity Barang</label>
                 <input type="text" id="quantity_barang" name="quantity_barang" placeholder="">
-            <input type="submit" name="pelanggan" value="Kirim">
+            <input type="submit" name="nota" value="Kirim">
           </form>
         </div>
     </div>

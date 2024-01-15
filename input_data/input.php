@@ -39,12 +39,12 @@
       </li>
 
       <li>
-        <a href="#">
+        <a href="../nota/nota.php">
           <i class='bx bx-pie-chart-alt-2' ></i>
           <span class="link_name">Nota</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Nota</a></li>
+          <li><a class="link_name" href="../nota/nota.php">Nota</a></li>
         </ul>
       </li>
 
@@ -71,7 +71,7 @@
       <span class="text">Input Data Pelanggan</span>
       <div class="content-main">
       <h1 class="judul">Masukkan Data Pelanggan</h1>
-          <form action="" class="form-content">
+          <form action="" name="" class="form-content">
             <label for="">Nama Perusahaan</label>
             <input type="text" id="nama_perusahaan" name="nama_perusahaan" placeholder="">
             <label for="">Alamat</label>
