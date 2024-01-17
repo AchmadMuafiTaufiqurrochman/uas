@@ -17,7 +17,7 @@ VALUE ('$nama_perusahaan', '$alamat', '$npwp')"
   <head>
     <meta charset="UTF-8">
     <title> Input Data Pelanggan</title>
-    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="./stylepelanggan.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
