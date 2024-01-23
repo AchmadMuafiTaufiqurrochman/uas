@@ -3,7 +3,7 @@ include("../koneksi.php");
 
 if(isset($_GET['btn_nota'])){
  $nama_pelanggan = mysqli_query
- ($conn, "SELECT pelanggan.nama_perusahaan
+ ($conn, "SELECT pelanggan.nama_perusahaan, nota.no_nota, pelanggan.npwp
  FROM nota
  JOIN pelanggan ON nota.id_pelanggan = pelanggan.id_pelanggan
  WHERE nota.no_nota = '".$_GET['btn_nota']."'");
@@ -62,7 +62,9 @@ $uwu = $sum['total_harga']  + $pajak;
               ?>
             </select>
             <button type="submit" onclick="validateFormOnClick()">Submit</button>
-            <span></span>
+            <img src="../unicorn.png" alt="kuda" style="height:10%; width:10%;">
+            <span>No NOTA : <?php echo $nama_perusahaan['no_nota'];?></span>
+            <span>NPWP : <?php echo $nama_perusahaan['npwp'];?></span>
             <span>Sidoarjo, <?php echo $tanggal['tanggal'] ?></span>
         </form>
                  
@@ -112,12 +114,16 @@ $uwu = $sum['total_harga']  + $pajak;
                 <td>Rp. <?php echo  $uwu?></td>
                 </tr>
             </table>
-
-            <table border="1px">
+            <br>
+            <table style="width: 100%; text-align: center;  " > 
                 <tr>
-                  
+                  <td>Tanda Terima</td>
+                  <td>Hormat Kami</td>
                 </tr>
-
+                <tr style="height: 150px;vertical-align: bottom;">
+                  <td >PT. UNICORN</td>
+                  <td><?php echo isset($nama_perusahaan['nama_perusahaan']) ? $nama_perusahaan['nama_perusahaan'] : ''?></td>
+                </tr>
             </table>
         </div>
     </div>
